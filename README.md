@@ -151,7 +151,7 @@ All of the components are installed on the single host in my lab. The lab server
 ```
 echou@elsticsearch-1:~$ ifconfig
 ens160: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.168.2.118  netmask 255.255.255.0  broadcast 192.168.2.255
+        inet 192.168.x.x  netmask x.x.x.0  broadcast 192.168.x.x
 
 ens192: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 172.16.1.118  netmask 255.255.255.0  broadcast 172.16.1.255
