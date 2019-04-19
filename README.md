@@ -16,7 +16,7 @@ I am working on a related book, currently, it is in its early release that can b
 
 ![Book Cover](images/book_cover.png)
 
-### Useful Links
+## Useful Links
 
 - Elastic Stack and Product Documentation [Elstic Stack and Proudct Documentation](https://www.elastic.co/guide/index.html)
 - ElastiFlow Project [ElastiFlow Project](https://github.com/robcowart/elastiflow)
@@ -27,7 +27,7 @@ I am working on a related book, currently, it is in its early release that can b
 - Cisco NXOS NetFlow Configuration [Cisco NXOS NetFlow Configuration](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/5_x/nx-os/system_management/configuration/guide/sm_nx_os_cg/sm_15netflow.html)
 
 
-### Full Demonstration Screencast
+## Full Demonstration Screencast
 
 **Full Length Demonstration Video**
 
@@ -36,7 +36,7 @@ I am working on a related book, currently, it is in its early release that can b
 [![Full Video Demo](images/devnet_speaker.png)](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 
-### Lab Topology
+## Lab Topology
 
 - I am using Cisco VIRL for the virtual lab, you can find the *topology_simple.virl* file in this repository. 
 
@@ -46,7 +46,7 @@ The full device configuration can be viewed under the *lab_device_configurations
 
 [![1. Lab Topology and Configuration](https://i9.ytimg.com/vi/poEa6y2prxk/mq2.jpg?sqp=CMiU6OUF&rs=AOn4CLCLYTI60Zl6xbON0OTa9QquFKcBAQ)](https://www.youtube.com/watch?v=poEa6y2prxk&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
-#### Cisco IOSv Device Configuration Snippet
+## Cisco IOSv Device Configuration Snippet
 
 ```
 iosv-1#sh run
@@ -80,7 +80,7 @@ logging host 172.16.1.118 vrf Mgmt-intf transport udp port 5144
 !
 ```
 
-#### Cisco NX-OSv Device Configuraiton Snippet 
+## Cisco NX-OSv Device Configuraiton Snippet 
 
 ```
 nx-osv-1# sh run
@@ -128,7 +128,7 @@ logging source-interface mgmt0
 logging monitor 7
 ```
 
-#### Elsticsearch and Kibana Installation
+## Elsticsearch and Kibana Installation
 
 Elasticsearch and Kibana Installation links can be found on the [Elstic Stack Documentation](https://www.elastic.co/guide/index.html) for the OS you are using. In my example, I am using Ubuntu 18.04 LTS and installed the packages via the Debian packages. 
 
@@ -162,7 +162,7 @@ ens192: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
   
 [![2. Installation Check](https://i9.ytimg.com/vi/MzfB2b41LPM/mq3.jpg?sqp=CKCZ6OUF&rs=AOn4CLBiJbC9equAWWl0MfHFx9o9uSLKRw)](https://www.youtube.com/watch?v=MzfB2b41LPM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
-#### Data Ingestions - Logstash (and Beats)
+## Data Ingestions - Logstash (and Beats)
 
 - My Logstash configuration is listed below, notice in the input section of different UDP ports and the corresponded tagging of types. At the output section, there is an if / else statement to put the information in the right index. 
 
@@ -205,7 +205,7 @@ output {
   
 [![3. Logstash Configuration and Output](https://i9.ytimg.com/vi/gPgrGOYnWVs/mq2.jpg?sqp=CKCZ6OUF&rs=AOn4CLCReVuZSQmXDF2CNtqU3bjNO2Tedw)](https://www.youtube.com/watch?v=gPgrGOYnWVs&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
-#### Search with Elasticsearch and Visualization with Kibana
+## Search with Elasticsearch and Visualization with Kibana
 
 - Once the data are in being shipped to Elasticsearch, you can start by creating indices in Kibana. In my example, my Elasticsearch configuration allows for automatic creation of indices when the data is received. 
   
@@ -227,7 +227,7 @@ output {
 
 [![8. Creating Dashboards](https://i9.ytimg.com/vi/ciRyOrZxpoY/mq2.jpg?sqp=CPid6OUF&rs=AOn4CLAr2RKBEDcja1nQrz3yYdFv68kDBQ)](https://www.youtube.com/watch?v=ciRyOrZxpoY&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
-### To Do [04/19/2019]
+## To Do [04/19/2019]
 
 - Give examples of Beats
 - More discussion and examples of Search and API
