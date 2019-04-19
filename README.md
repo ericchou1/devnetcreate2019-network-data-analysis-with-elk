@@ -29,7 +29,7 @@ I am working on a related book, currently, it is in its early release that can b
 
 ### Full Demonstration Screencast
 
-[![](https://youtu.be/Z_ktlYGaOO4/0.jpg)](https://youtu.be/Z_ktlYGaOO4)
+[![](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw&index=4/0.jpg)](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw&index=4)
 
 
 ### Lab Topology
