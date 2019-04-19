@@ -29,7 +29,11 @@ I am working on a related book, currently, it is in its early release that can b
 
 ### Full Demonstration Screencast
 
-[![Full Video Demo](https://i9.ytimg.com/vi/Z_ktlYGaOO4/mq1.jpg?sqp=CPCP6OUF&rs=AOn4CLBLiTUVZPWvITiah6r3bB0RoaP63g)](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+**Full Length Demonstration Video**
+
+*Please feel free to jump to different sections below if desired*
+
+[![Full Video Demo](https://i9.ytimg.com/vi/Z_ktlYGaOO4/mq3.jpg?sqp=CPCP6OUF&rs=AOn4CLCYzZycUJ4VeO8vszcV1oDf55a05A)](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 
 ### Lab Topology
@@ -39,6 +43,8 @@ I am working on a related book, currently, it is in its early release that can b
 ![Lab Topology](images/lab_topology.png)
 
 The full device configuration can be viewed under the *lab_device_configurations* folder, relevant configuration snippets are listed below. 
+
+[![1. Lab Topology and Configuration](https://i9.ytimg.com/vi/poEa6y2prxk/mq2.jpg?sqp=CMiU6OUF&rs=AOn4CLCLYTI60Zl6xbON0OTa9QquFKcBAQ)](https://www.youtube.com/watch?v=poEa6y2prxk&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 #### Cisco IOSv Device Configuration Snippet
 
@@ -122,23 +128,97 @@ logging source-interface mgmt0
 logging monitor 7
 ```
 
-### Demonstrations
+#### Elsticsearch and Kibana Installation
 
-Full Demon
+Elasticsearch and Kibana Installation links can be found on the [Elstic Stack Documentation](https://www.elastic.co/guide/index.html) for the OS you are using. In my example, I am using Ubuntu 18.04 LTS and installed the packages via the Debian packages. 
 
-#### Data Ingestions - Logstash and Beats
+You can install any of the later versions of Elastic Stack, however, you should keep the component vdersions consistent. In my example, all of the components are at version 6.5.4.  
 
-placeholder 
+```
+echou@elsticsearch-1:~$ uname -a
+Linux elsticsearch-1 4.15.0-47-generic #50-Ubuntu SMP Wed Mar 13 10:44:52 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
 
-#### Search - Elastticsearch
+echou@elsticsearch-1:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.1 LTS
+Release:	18.04
+Codename:	bionic
+```
 
-placeholder
+- Check to see if the services are running without error. 
+  
+[![2. Installation Check](https://i9.ytimg.com/vi/MzfB2b41LPM/mq3.jpg?sqp=CKCZ6OUF&rs=AOn4CLBiJbC9equAWWl0MfHFx9o9uSLKRw)](https://www.youtube.com/watch?v=MzfB2b41LPM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
-#### Visualization - Kibana
+#### Data Ingestions - Logstash (and Beats)
 
-placeholder
+- My Logstash configuration is listed below, notice in the input section of different UDP ports and the corresponded tagging of types. At the output section, there is an if / else statement to put the information in the right index. 
 
-### Summary
+- To keep things simple, I have not used any transformation, filters, or Grok patterns. More information can be found in the [Logstash Documentation](https://www.elastic.co/guide/en/logstash/index.html).
 
-placeholder
+- Beats is a light weight data shipper that can sit directly on the host and be aggregated to Logstash or directly to Elasticsearch. Check out [Beats Documentation](https://www.elastic.co/guide/en/beats/libbeat/current/index.html).
+
+```
+input {
+  udp {
+    port => 5144
+    type => "syslog-ios"
+  }
+  udp {
+    port => 5145
+    type => "syslog-nxos"
+  }
+  udp {
+    port => 2055
+    codec => netflow
+    type => "netflow"
+  }
+}
+
+output {
+  stdout { codec => rubydebug }
+  if "netflow" in [type] {
+    elasticsearch {
+      hosts => ["http://localhost:9200"]
+      index => "cisco-netflow-%{+YYYY.MM.dd}"
+    }
+  } else {
+    elasticsearch {
+      hosts => ["http://localhost:9200"]
+      index => "cisco-syslog-%{+YYYY.MM.dd}"
+    }
+  }
+}
+```
+  
+[![3. Logstash Configuration and Output](https://i9.ytimg.com/vi/gPgrGOYnWVs/mq2.jpg?sqp=CKCZ6OUF&rs=AOn4CLCReVuZSQmXDF2CNtqU3bjNO2Tedw)](https://www.youtube.com/watch?v=gPgrGOYnWVs&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+
+#### Search with Elasticsearch and Visualization with Kibana
+
+- Once the data are in being shipped to Elasticsearch, you can start by creating indices in Kibana. In my example, my Elasticsearch configuration allows for automatic creation of indices when the data is received. 
+  
+[![4. Create Indices](https://i9.ytimg.com/vi/JCG4SsdS8eM/mq3.jpg?sqp=CMyb6OUF&rs=AOn4CLBqpYl52wrmxaXvcqEAJPg5QG5kxg)](https://www.youtube.com/watch?v=JCG4SsdS8eM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+
+- Once the indices are recognized in Kibana, we can start to play around with search directly to gain more knowledge. Once we are satisfied with the results, we can save the search as well as use it for via API calls. 
+
+[![5. Search and cCurl](https://i9.ytimg.com/vi/jhEyCyqLu6M/mq2.jpg?sqp=CMyb6OUF&rs=AOn4CLDo3Lr-qScNYspISagSIKQqpkflFA)](https://www.youtube.com/watch?v=jhEyCyqLu6M&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+
+- Many of the search parameters can be tweaked and fine-tuned either in the search URL or request body. 
+
+[![6. Search Parameters](https://i9.ytimg.com/vi/6B6gCzkBZY0/mq2.jpg?sqp=CMyb6OUF&rs=AOn4CLDnYAE_6bdBFY7n1kOF0xfOe1bGOQ)](https://www.youtube.com/watch?v=6B6gCzkBZY0&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+
+- We can also create visualization via charts. In this example, I am creating a donut-pie chart that separates NetFlow versions and another bar graph to indicate the different sources. Notice the time range selection and real-time update to the graph. 
+
+[![7. Creating Charts](https://i9.ytimg.com/vi/MBfJz9M-nYQ/mq2.jpg?sqp=CPid6OUF&rs=AOn4CLDnZgoobpjLYvLApt_kPfIhlPkOyA)](https://www.youtube.com/watch?v=MBfJz9M-nYQ&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+
+- We can also aggregate the graph into a dashboard for easy viewing. 
+
+[![8. Creating Dashboards](https://i9.ytimg.com/vi/ciRyOrZxpoY/mq2.jpg?sqp=CPid6OUF&rs=AOn4CLAr2RKBEDcja1nQrz3yYdFv68kDBQ)](https://www.youtube.com/watch?v=ciRyOrZxpoY&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+
+### To Do [04/19/2019]
+
+- Give examples of Beats
+- More discussion and examples of Search and API
+- More visualization examples
+- Examples of other tools integration, such as Graphana
 
