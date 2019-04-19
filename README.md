@@ -146,6 +146,18 @@ Release:	18.04
 Codename:	bionic
 ```
 
+All of the components are installed on the single host in my lab. The lab server are dual-home to my home network as well as the management VM-Net that the routers reside on. 
+
+```
+echou@elsticsearch-1:~$ ifconfig
+ens160: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.2.118  netmask 255.255.255.0  broadcast 192.168.2.255
+
+ens192: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.16.1.118  netmask 255.255.255.0  broadcast 172.16.1.255
+        inet6 fe80::20c:29ff:fef4:6d26  prefixlen 64  scopeid 0x20<link>
+```
+
 - Check to see if the services are running without error. 
   
 [![2. Installation Check](https://i9.ytimg.com/vi/MzfB2b41LPM/mq3.jpg?sqp=CKCZ6OUF&rs=AOn4CLBiJbC9equAWWl0MfHFx9o9uSLKRw)](https://www.youtube.com/watch?v=MzfB2b41LPM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
