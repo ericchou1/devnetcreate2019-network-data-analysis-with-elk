@@ -33,7 +33,7 @@ I am working on a related book, currently, it is in its early release that can b
 
 *Please feel free to jump to different sections below if desired*
 
-[![Full Video Demo](https://i9.ytimg.com/vi/Z_ktlYGaOO4/mq1.jpg?sqp=CNzE7OUF&rs=AOn4CLBKAgOtakfzTUmQzEioxU9lUzw5zQ)](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![Full Video Demo](/images/screencast-img-0.jpg)](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 
 ## Lab Topology
@@ -44,7 +44,7 @@ I am working on a related book, currently, it is in its early release that can b
 
 The full device configuration can be viewed under the *lab_device_configurations* folder, relevant configuration snippets are listed below. 
 
-[![1. Lab Topology and Configuration](https://i9.ytimg.com/vi/poEa6y2prxk/mq2.jpg?sqp=CMiU6OUF&rs=AOn4CLCLYTI60Zl6xbON0OTa9QquFKcBAQ)](https://www.youtube.com/watch?v=poEa6y2prxk&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![1. Lab Topology and Configuration](images/screencast-img-1.jpg)](https://www.youtube.com/watch?v=poEa6y2prxk&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 ## Cisco IOSv Device Configuration Snippet
 
@@ -160,7 +160,7 @@ ens192: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 - Check to see if the services are running without error. 
   
-[![2. Installation Check](https://i9.ytimg.com/vi/MzfB2b41LPM/mq3.jpg?sqp=CKCZ6OUF&rs=AOn4CLBiJbC9equAWWl0MfHFx9o9uSLKRw)](https://www.youtube.com/watch?v=MzfB2b41LPM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![2. Installation Check](images/screencast-img-2.jpg)](https://www.youtube.com/watch?v=MzfB2b41LPM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 ## Data Ingestions - Logstash (and Beats)
 
@@ -203,29 +203,29 @@ output {
 }
 ```
   
-[![3. Logstash Configuration and Output](https://i9.ytimg.com/vi/gPgrGOYnWVs/mq2.jpg?sqp=CKCZ6OUF&rs=AOn4CLCReVuZSQmXDF2CNtqU3bjNO2Tedw)](https://www.youtube.com/watch?v=gPgrGOYnWVs&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![3. Logstash Configuration and Output](images/screencast-img-3.jpg)](https://www.youtube.com/watch?v=gPgrGOYnWVs&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 ## Search with Elasticsearch and Visualization with Kibana
 
 - Once the data are in being shipped to Elasticsearch, you can start by creating indices in Kibana. In my example, my Elasticsearch configuration allows for automatic creation of indices when the data is received. 
   
-[![4. Create Indices](https://i9.ytimg.com/vi/JCG4SsdS8eM/mq3.jpg?sqp=CMyb6OUF&rs=AOn4CLBqpYl52wrmxaXvcqEAJPg5QG5kxg)](https://www.youtube.com/watch?v=JCG4SsdS8eM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![4. Create Indices](images/screencast-img-4.jpg)](https://www.youtube.com/watch?v=JCG4SsdS8eM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 - Once the indices are recognized in Kibana, we can start to play around with search directly to gain more knowledge. Once we are satisfied with the results, we can save the search as well as use it for via API calls. 
 
-[![5. Search and cCurl](https://i9.ytimg.com/vi/jhEyCyqLu6M/mq2.jpg?sqp=CMyb6OUF&rs=AOn4CLDo3Lr-qScNYspISagSIKQqpkflFA)](https://www.youtube.com/watch?v=jhEyCyqLu6M&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![5. Search and cCurl](images/screencast-img-5.jpg)](https://www.youtube.com/watch?v=jhEyCyqLu6M&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 - Many of the search parameters can be tweaked and fine-tuned either in the search URL or request body. 
 
-[![6. Search Parameters](https://i9.ytimg.com/vi/6B6gCzkBZY0/mq2.jpg?sqp=CMyb6OUF&rs=AOn4CLDnYAE_6bdBFY7n1kOF0xfOe1bGOQ)](https://www.youtube.com/watch?v=6B6gCzkBZY0&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![6. Search Parameters](images/screencast-img-6.jpg)](https://www.youtube.com/watch?v=6B6gCzkBZY0&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 - We can also create visualization via charts. In this example, I am creating a donut-pie chart that separates NetFlow versions and another bar graph to indicate the different sources. Notice the time range selection and real-time update to the graph. 
 
-[![7. Creating Charts](https://i9.ytimg.com/vi/MBfJz9M-nYQ/mq2.jpg?sqp=CPid6OUF&rs=AOn4CLDnZgoobpjLYvLApt_kPfIhlPkOyA)](https://www.youtube.com/watch?v=MBfJz9M-nYQ&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![7. Creating Charts](images/screencast-img-7.jpg)](https://www.youtube.com/watch?v=MBfJz9M-nYQ&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 - We can also aggregate the graph into a dashboard for easy viewing. 
 
-[![8. Creating Dashboards](https://i9.ytimg.com/vi/ciRyOrZxpoY/mq2.jpg?sqp=CPid6OUF&rs=AOn4CLAr2RKBEDcja1nQrz3yYdFv68kDBQ)](https://www.youtube.com/watch?v=ciRyOrZxpoY&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![8. Creating Dashboards](images/screencast-img-8.jpg)](https://www.youtube.com/watch?v=ciRyOrZxpoY&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 ## To Do [04/19/2019]
 
