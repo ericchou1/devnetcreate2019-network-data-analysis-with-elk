@@ -33,7 +33,7 @@ I am working on a related book, currently, it is in its early release that can b
 
 *Please feel free to jump to different sections below if desired*
 
-[![Full Video Demo](images/devnet_speaker.png)](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
+[![Full Video Demo](https://i9.ytimg.com/vi/Z_ktlYGaOO4/mq1.jpg?sqp=CNzE7OUF&rs=AOn4CLBKAgOtakfzTUmQzEioxU9lUzw5zQ)](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 
 ## Lab Topology
