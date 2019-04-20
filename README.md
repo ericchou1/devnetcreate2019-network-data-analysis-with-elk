@@ -33,6 +33,8 @@ I am working on a related book, currently, it is in its early release that can b
 
 *Please feel free to jump to different sections below if desired*
 
+- Click image below for YouTube video
+
 [![Full Video Demo](/images/screencast-img-0.jpg)](https://www.youtube.com/watch?v=Z_ktlYGaOO4&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 
@@ -43,6 +45,8 @@ I am working on a related book, currently, it is in its early release that can b
 ![Lab Topology](images/lab_topology.png)
 
 The full device configuration can be viewed under the *lab_device_configurations* folder, relevant configuration snippets are listed below. 
+
+- Click image below for YouTube video
 
 [![1. Lab Topology and Configuration](images/screencast-img-1.jpg)](https://www.youtube.com/watch?v=poEa6y2prxk&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
@@ -160,6 +164,8 @@ ens192: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 - Check to see if the services are running without error. 
   
+- Click image below for YouTube video
+
 [![2. Installation Check](images/screencast-img-2.jpg)](https://www.youtube.com/watch?v=MzfB2b41LPM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 ## Data Ingestions - Logstash (and Beats)
@@ -202,28 +208,40 @@ output {
   }
 }
 ```
-  
+
+- Click image below for YouTube video
+
 [![3. Logstash Configuration and Output](images/screencast-img-3.jpg)](https://www.youtube.com/watch?v=gPgrGOYnWVs&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 ## Search with Elasticsearch and Visualization with Kibana
 
 - Once the data are in being shipped to Elasticsearch, you can start by creating indices in Kibana. In my example, my Elasticsearch configuration allows for automatic creation of indices when the data is received. 
-  
+
+- Click image below for YouTube video
+
 [![4. Create Indices](images/screencast-img-4.jpg)](https://www.youtube.com/watch?v=JCG4SsdS8eM&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 - Once the indices are recognized in Kibana, we can start to play around with search directly to gain more knowledge. Once we are satisfied with the results, we can save the search as well as use it for via API calls. 
+
+- Click image below for YouTube video
 
 [![5. Search and cCurl](images/screencast-img-5.jpg)](https://www.youtube.com/watch?v=jhEyCyqLu6M&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 - Many of the search parameters can be tweaked and fine-tuned either in the search URL or request body. 
 
+- Click image below for YouTube video
+
 [![6. Search Parameters](images/screencast-img-6.jpg)](https://www.youtube.com/watch?v=6B6gCzkBZY0&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 - We can also create visualization via charts. In this example, I am creating a donut-pie chart that separates NetFlow versions and another bar graph to indicate the different sources. Notice the time range selection and real-time update to the graph. 
 
+- Click image below for YouTube video
+
 [![7. Creating Charts](images/screencast-img-7.jpg)](https://www.youtube.com/watch?v=MBfJz9M-nYQ&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
 - We can also aggregate the graph into a dashboard for easy viewing. 
+
+- Click image below for YouTube video
 
 [![8. Creating Dashboards](images/screencast-img-8.jpg)](https://www.youtube.com/watch?v=ciRyOrZxpoY&list=PLAaTeRWIM_wvwSx5SzH-Y8HhEBD1eqmqw)
 
