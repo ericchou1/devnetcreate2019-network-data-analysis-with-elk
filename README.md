@@ -11,7 +11,7 @@ Many, if not most, business problems can be solved with answering a question sea
 
 ### Book
 
-I am working on a related book, currently, it is in its early release that can be purchased on LeanPub with a heavy discount (85% off) and you will receive all the updates along the way until full release: 
+I am working on a related book, you can sign up to be notified when the book is released: 
 [Network Data Analysis with Elasticsearch, Logstash, and Kibana](https://leanpub.com/network-data-analysis-with-elasticsearch-logstash-and-kibana/).
 
 ![Book Cover](images/book_cover.png)
