@@ -11,10 +11,8 @@ Many, if not most, business problems can be solved with answering a question sea
 
 ### Book
 
-I am working on a related book, you can sign up to be notified when the book is released: 
+I am working on a related book. It is very early, but if you are interested you can sign up to be notified when the book is released: 
 [Network Data Analysis with Elasticsearch, Logstash, and Kibana](https://leanpub.com/network-data-analysis-with-elasticsearch-logstash-and-kibana/).
-
-![Book Cover](images/book_cover.png)
 
 ## Useful Links
 
